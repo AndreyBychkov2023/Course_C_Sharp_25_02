@@ -20,6 +20,3 @@ Console.WriteLine(Example(num_1, num_2, num_3, num_4, num_5, num_6));
 
 //Console.WriteLine(Example(3, 6, 8, 2, 1, -7));
 //Console.WriteLine(Example(7, -5, 0, 1, -1, 9));
-
-
-
