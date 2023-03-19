@@ -17,4 +17,4 @@ string convert(int num)
 }
 int num = int.Parse(Console.ReadLine()!);
 string result = convert(num);
-Console.WriteLine(result);
+Console.Writ
