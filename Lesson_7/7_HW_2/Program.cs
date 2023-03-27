@@ -8,49 +8,44 @@
 // 8 4 2 4
 // 1 7 -> такого числа в массиве нет
 
-void Print(int[,] arr)
-{
-    int row = arr.GetLength(0);
-    int column = arr.GetLength(1);
-     
-    for (int i = 0; i < row; i++)
+void Print(int[] arr)
     {
-        for (int j = 0; j < column; j++)
-            Console.Write($" {arr[i, j]} ");
+        int size = arr.Length;
+    
+        for (int i = 0; i < size; i++)
+            Console.Write($"{arr[i]} ");
         Console.WriteLine();
     }
-    Console.WriteLine();
-}
     
-int[,] MassNums(int row, int column, int from, int to)
-{
-    int[,] arr = new int[row, column];
+    int[] MassNums(int size, int from, int to)
+    {
+        int[] arr = new int[size];
     
-    for (int i = 0; i < row; i++)
-        for (int j = 0; j < column; j++)
-            arr[i, j] = new Random().Next(from, to);
-
-    return arr;
-}
-
-string Example (int [,] arr, int num)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int i = 0; i < size; i++)
+            arr[i] = new Random().Next(from, to);
+        return arr;
+    }
+    
+    void SumPosNeg(int[] arr, int num_1)
+    {
+    
+    
+        for (int i = 0; i < arr.Length; i++)
         {
-            if (arr[i, j] == num)
-            return $"{num}";
+            if (arr[i] == num_1) 
+            {
+              Console.WriteLine("Да");
+              return;
+            }
         }
-    return "Такого элемента нет";
-}
-
-int num_row = int.Parse(Console.ReadLine()!);
-int num_column = int.Parse(Console.ReadLine()!);
-int start = int.Parse(Console.ReadLine()!);
-int stop = int.Parse(Console.ReadLine()!);
-int num = int.Parse(Console.ReadLine()!);
-
-int[,] mass = MassNums(num_row, num_column, start, stop);
-Print(mass);
-string sum = Example(mass, num);
-Console.WriteLine(sum);
+        Console.WriteLine("Нет");
+    }
+    
+    
+    int num = int.Parse(Console.ReadLine()!);
+    int start = int.Parse(Console.ReadLine()!);
+    int stop = int.Parse(Console.ReadLine()!);
+    int num_1 = int.Parse(Console.ReadLine()!);
+    int[] mass = MassNums(num, start, stop);
+    Print(mass);
+    SumPosNeg(mass, num_1);
