@@ -52,7 +52,10 @@ int SumMass (int [,] arr)
     return summarr;
 }
 
-
+Console.WriteLine("Введите количество строк массива");    
+int num_row = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите количество колонок массива");
+int num_column = int.Parse(Console.ReadLine()!);
 int num_row = int.Parse(Console.ReadLine()!);
 int num_column = int.Parse(Console.ReadLine()!);
 int start = int.Parse(Console.ReadLine()!);
